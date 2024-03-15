@@ -45,7 +45,7 @@ pub fn update_user(db:&State<MongoRepo>, path:String, new_user:Json<User>) -> Re
     let data = User{
         id: Some(ObjectId::parse_str(&id).unwrap()),
         name:new_user.name.to_owned(),
-        location:new_user.location.to_owned(),
+        location:new_user.location.to_owned(), 
         title:new_user.title.to_owned(),
     };
     let update_result = db.update_user(&id, data);
