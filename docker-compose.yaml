@@ -1,0 +1,11 @@
+version: "3.6"
+services:
+    rust_mongo:
+          image: mongo:5
+          container_name: 'rust_mongo'
+          restart: always
+          environmnet:
+            MONGO_INITDB_ROOT-USERNAME: root
+            MONGO_INITDB_ROOT-PASSWORD: password
+          port:
+            - "27017:27017"
